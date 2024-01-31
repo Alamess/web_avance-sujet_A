@@ -1,0 +1,140 @@
+<div class="hero_area">
+  <app-navbar id="home"  ></app-navbar>
+  <!-- home.component.html -->
+  
+  <section class="slider_section position-relative ">
+      <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        
+        <div class="carousel-inner">
+          <div class="carousel-item "  
+          data-bs-interval="5000"
+          *ngFor="let item of carouselData; let i = index" 
+           [ngClass]="{active:i===0}">
+            <div class="container">
+              <div class="box">
+                <div class="row">
+                  <div class="col-md-7">
+                    <div class="detail-box">
+                      <div>
+                        <h1 *ngIf="showNav()">Welcome {{ name }} ,</h1>
+                        <h1 *ngIf="!showNav()"> {{ item.title }} </h1>
+                        <h2 *ngIf="!showNav()">{{ item.subtitle }}</h2>
+                        <h2 *ngIf="showNav()">{{ item.reclamation }}</h2>
+
+                        <div>
+                          <a *ngIf="!showNav()" routerLink="/sign_up">
+                            Get Started
+                          </a>
+                          <a *ngIf="showNav()" routerLink="/form1">
+                            Reclamation
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-5">
+                    <div class="img-box">
+                      <img [src]="item.imagePath" alt="" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+      </div>
+    </section>
+    
+  </div>
+  
+  <app-how id="how-section"></app-how>
+  <app-about  id="about-section"></app-about>
+  
+    <section class="auto_section layout_padding">
+      <div class="container">
+        <div class="heading_container">
+          <h2>
+            Start Automatic Now
+          </h2>
+        </div>
+        <div class="box">
+          <div class="img-box">
+            <img src="../../../assets/auto-img.png" alt="">
+          </div>
+          <div class="detail-box">
+            <p>
+              Register with CryptoNa today to discover how our platform can help you maximize your cryptocurrency investments. Enjoy streamlined registration, instant market access, and start trading right away. The future of cryptocurrency trading awaits you
+            </p>
+            <div class="btn-box">
+              <a >
+                Register Now
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <section class="client_section layout_padding-bottom">
+      <div class="container">
+        <div class="heading_container">
+          <h2>
+            Testimonial
+          </h2>
+        </div>
+        <div class="box">
+          <div class="b-1">
+            <div class="client_id">
+              <div class="img-box">
+                <img src="../../../assets/Ala.jpg" alt="">
+              </div>
+              <div class="name">
+                <h5>
+                 Ala
+                </h5>
+                
+              </div>
+            </div>
+          </div>
+          <div class="client_detail">
+            <p>
+              Hear success stories from our users and how CryptoNa has transformed their cryptocurrency trading experience. From beginners to seasoned investors, our clients share how CryptonNa has made their trading journey more efficient, secure, and profitable.
+
+            </p>
+          </div>
+        </div>
+        <div class="box">
+          <div class="client_id">
+            <div class="img-box">
+              <img src="../../../assets/wajd.jpg" alt="">
+            </div>
+            <div class="name">
+              <h5>
+                Wajd
+              </h5>
+              
+            </div>
+          </div>
+          <div class="client_detail">
+            <p>
+              This draft content is adapted to your request. Feel free to adjust or extend the sections according to the specific needs of your project.
+
+            </p>
+          </div>
+        </div>
+        <div class="btn-box">
+          <a >
+            Read More
+          </a>
+        </div>
+      </div>
+    </section>
+    <app-footer></app-footer>

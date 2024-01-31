@@ -1,0 +1,137 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <form class="form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <div class="field">
+        <label class="label">First Name</label>
+        <input
+          type="text"
+          class="input"
+          formControlName="nom"
+          [class.invalid]="
+            registerForm.get('nom')?.invalid &&
+            (registerForm.get('nom')?.dirty ||
+              registerForm.get('nom')?.touched ||
+              isSubmitted)
+          "
+        />
+        <span
+          *ngIf="
+            registerForm.get('nom')?.hasError('required') &&
+            (registerForm.get('nom')?.dirty ||
+              registerForm.get('nom')?.touched ||
+              isSubmitted)
+          "
+          class="error"
+          >This field is required.</span>
+      </div>
+      <div class="field">
+        <label class="label">Last Name</label>
+        <input
+          type="text"
+          class="input"
+          formControlName="prenom"
+          [class.invalid]="
+            registerForm.get('prenom')?.invalid &&
+            (registerForm.get('prenom')?.dirty ||
+              registerForm.get('prenom')?.touched ||
+              isSubmitted)
+          "
+        />
+        <span
+          *ngIf="
+            registerForm.get('prenom')?.hasError('required') &&
+            (registerForm.get('prenom')?.dirty ||
+              registerForm.get('prenom')?.touched ||
+              isSubmitted)
+          "
+          class="error"
+          >This field is required.</span
+        >
+      </div>
+      <div class="field">
+        <label class="label">Date of birth</label>
+        <input
+          type="date"
+          class="input"
+          formControlName="date_naissance"
+          [class.invalid]="
+            registerForm.get('date_naissance')?.invalid &&
+            (registerForm.get('date_naissance')?.dirty ||
+              registerForm.get('date_naissance')?.touched ||
+              isSubmitted)
+          "
+        />
+        <span
+        *ngIf="
+          registerForm.get('date_naissance')?.hasError('required') &&
+          (registerForm.get('date_naissance')?.dirty ||
+            registerForm.get('date_naissance')?.touched ||
+            isSubmitted)
+        "
+        class="error"
+        >This field is required.</span
+      >
+      </div>
+      <div class="field">
+        <label class="label">Civility</label>
+      <select formControlName="civId" class="input">
+        <option *ngFor="let civ of civilite" [ngValue]="civ.id">
+          {{ civ.title }}
+        </option>
+      </select>
+    </div>
+      <div class="field">
+        <label class="label">CIN</label>
+        <input
+          type="text"
+          class="input"
+          formControlName="num_CIN"
+          [class.invalid]="
+            registerForm.get('num_CIN')?.invalid &&
+            (registerForm.get('num_CIN')?.dirty ||
+              registerForm.get('num_CIN')?.touched ||
+              isSubmitted)
+          "
+        />
+        <span
+        *ngIf="
+          registerForm.get('num_CIN')?.hasError('required') &&
+          (registerForm.get('num_CIN')?.dirty ||
+            registerForm.get('num_CIN')?.touched ||
+            isSubmitted)
+        "
+        class="error"
+        >This field is required.</span
+      >
+      </div>
+      <div class="field">
+        <label class="label">RIB</label>
+        <input
+          type="text"
+          class="input"
+          formControlName="RIB"
+
+          [class.invalid]="
+            registerForm.get('RIB')?.invalid &&
+            (registerForm.get('RIB')?.dirty ||
+              registerForm.get('RIB')?.touched ||
+              isSubmitted)
+          "
+        />
+        <span
+        *ngIf="
+          registerForm.get('RIB')?.hasError('required') &&
+          (registerForm.get('RIB')?.dirty ||
+            registerForm.get('RIB')?.touched ||
+            isSubmitted)
+        "
+        class="error"
+        >This field is required.</span
+      >
+      </div>
+      <div class="btn">
+        <button  type="submit" class="button" (click)="Submit()"  >Next</button>
+      </div>
+    </form>
+    </div>
+    <app-footer></app-footer>

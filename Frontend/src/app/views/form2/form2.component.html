@@ -1,0 +1,27 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <form class="form" [formGroup]="registerForm" (ngSubmit)="Submit()" >
+        <div class="field">
+            <label class="label">Subject</label>
+          <select  formControlName="SujetId" class="input">
+            <option *ngFor="let S of Sujet" [ngValue]="S.id">
+              {{ S.title }}
+            </option>
+          </select>
+        </div>
+        <div class="field">
+          <label class="label">Text</label>
+          <textarea
+            type="text"
+            class="input"
+            formControlName="Texte"
+            rows="12"
+          ></textarea>
+        </div>
+        <div class="btn">
+            <button  class="button" routerLink="/form1" >previous</button>    
+            <button type="submit" class="button">Submit</button>
+        </div>
+        </form>
+        </div>
+<app-footer></app-footer>

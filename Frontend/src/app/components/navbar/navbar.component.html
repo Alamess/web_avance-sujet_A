@@ -1,0 +1,46 @@
+
+<header class="header_section">
+  <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg custom_nav-container fixed-top">
+      <a class="navbar-brand" (click)="scrollTo('home')">
+        <span>
+          CryptoNa
+        </span>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+          <ul class="navbar-nav">
+            <li class="nav-item ml-lg-4" *ngIf="showNav()">
+              <a class="nav-link" routerLink="/home" (click)="scrollTo('home')">Home</a>
+            </li>
+            <li class="nav-item" *ngIf="showNav()">
+              <a class="nav-link" routerLink="/home" (click)="scrollTo('how-section')">How</a>
+            </li>
+            <li class="nav-item" *ngIf="showNav()">
+              <a class="nav-link" routerLink="/home" (click)="scrollTo('about-section')">About</a>
+            </li>
+            <li class="nav-item" *ngIf="showNav()">
+              <a class="nav-link" routerLink="/form1">Reclamation</a>
+            </li>
+            <li class="nav-item" *ngIf="!showNav()">
+              <a class="nav-link" routerLink="/sign_up">Login</a>
+            </li>
+            <li class="nav-item" *ngIf="!showNav()">
+              <a class="nav-link" routerLink="/sign_up">Sign Up</a>
+            </li>
+            <li class="nav-item" *ngIf="showNav()">
+              <a  (click)="logOut()">
+                <img class="logout" src="../../../assets/logout.png" alt="Logout">
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
